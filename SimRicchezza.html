@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Distribution Simulation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #container {
+            display: flex;
+        }
+
+        #controls {
+            width: 200px;
+            padding-right: 20px;
+        }
+
+        #chart-container {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Wealth Distribution Simulation</h1>
+    <div id="container">
+        <div id="chart-container">
+            <canvas id="wealthChart" width="400" height="200"></canvas>
+        </div>
+        <div id="controls">
+            <h3>Simulation Controls</h3>
+            <label>Number of Individuals: <input type="number" id="numIndividuals" value="100"></label>
+            <label>Initial Wealth: <input type="number" id="initialWealth" value="10"></label>
+            <label>Number of Encounters: <input type="number" id="numEncounters" value="1000"></label>
+            <label>Number of Simulations: <input type="number" id="numSimulations" value="3"></label>
+            <button onclick="runSimulation()">Run Simulation</button>
+
+            <h3>Select Simulation for Statistics</h3>
+            <select id="simulationSelector" onchange="updateStatistics()">
+                <!-- Options will be dynamically generated -->
+            </select>
+
+
+        </div>
+    </div>
+    <div id="report"></div>
+    <script src="Simulatore.js"></script>
+</body>
+
+<style>
+    #container {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    #chart-container {
+        flex-grow: 1;
+    }
+
+    #controls {
+        width: 250px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        margin-left: 20px;
+    }
+
+    #controls label {
+        font-size: 0.9em;
+        color: #333;
+        display: block;
+        margin-top: 10px;
+    }
+
+    #controls button {
+        margin-top: 15px;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #controls button:hover {
+        background-color: #0056b3;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 200px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+    .card h4 {
+        margin-top: 0;
+        font-size: 1.1em;
+        color: #333;
+    }
+
+    .card p {
+        margin: 5px 0;
+        font-size: 0.9em;
+        color: #666;
+    }
+</style>
+
+
+</html>
